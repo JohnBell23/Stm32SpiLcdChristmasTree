@@ -167,77 +167,9 @@ void St7735Adapter::drawMatrix(Coordinate start, bool matrix[MATRIX_LENGTH][MATR
   }
 }
 
-void St7735Adapter::drawChristmasTree()
+void St7735Adapter::drawPixel(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b)
 {
-  // colors => https://html-color.codes
-  init(0x19, 0x19, 0x70); // midnight blue
-
-  setDrawingColor(0x7b, 0x3f, 0x00); // tree brown timber
-  for (uint16_t y = 80; y < 110; y++)
-  {
-    Coordinate start
-    { 50, y };
-    Coordinate end
-    { 59, y };
-    drawLine(start, end);
-  }
-
-  setDrawingColor(0x22, 0x8b, 0x22); // green
-  uint16_t startx = 25;
-  uint16_t stopx = 84;
-  for (uint16_t y = 79; y > 59; y--)
-  {
-    Coordinate start
-    { startx++, y };
-    Coordinate end
-    { stopx--, y };
-    drawLine(start, end);
-  }
-  startx = 30;
-  stopx = 79;
-  for (uint16_t y = 59; y > 38; y--)
-  {
-    Coordinate start
-    { startx++, y };
-    Coordinate end
-    { stopx--, y };
-    drawLine(start, end);
-  }
-  startx = 35;
-  stopx = 74;
-  for (uint16_t y = 38; y > 18; y--)
-  {
-    Coordinate start
-    { startx++, y };
-    Coordinate end
-    { stopx--, y };
-    drawLine(start, end);
-  }
-
-  setDrawingColor(0xff, 0xfa, 0xfa0); // snow white ground
-  for (uint16_t y = 109; y < 127; y++)
-  {
-    Coordinate start
-    { 0, y };
-    Coordinate end
-    { 127, y };
-    drawLine(start, end);
-  }
-}
-
-void St7735Adapter::animateChristmasTree(Coordinate &flake1)
-{
-  setDrawingColor(0xff, 0xfa, 0xfa0); // snow white ground
-
-  ST7735_DrawPixel(flake1.x, flake1.y++, ST7735_COLOR565(m_drawingColor.r, m_drawingColor.g, m_drawingColor.b));
-
-  if ((flake1.y - 2) < 109)
-    ST7735_DrawPixel(flake1.x, (flake1.y - 2), ST7735_COLOR565(0x19, 0x19, 0x70));
-
-  if (flake1.y >= 128)
-  {
-    flake1.y = 0;
-  }
+  ST7735_DrawPixel(x, y, ST7735_COLOR565(r, g, b));
 }
 
 } /* namespace ST7735Adapter */

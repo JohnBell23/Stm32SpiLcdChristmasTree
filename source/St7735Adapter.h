@@ -2,7 +2,7 @@
  * St7735Adapter.h
  *
  *  Created on: Oct 4, 2024
- *      Author: jlue4
+ *      Author: john bell
  */
 
 #include "stdint.h"
@@ -46,8 +46,7 @@ public:
   void drawLine(Coordinate start, Coordinate end);
   void drawCircle(Coordinate center, uint16_t radius, bool bold = true);
   void drawMatrix(Coordinate start, bool matrix[MATRIX_LENGTH][MATRIX_LENGTH], uint16_t blockSize);
-  void drawChristmasTree();
-  void animateChristmasTree(Coordinate&);
+  void drawPixel(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b);
 };
 
 } /* namespace ST7735Adapter */
