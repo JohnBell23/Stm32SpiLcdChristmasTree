@@ -65,9 +65,20 @@ void St7735ChristmasTree::drawScene()
 
   {
     ST7735Adapter::St7735Adapter::Coordinate start
-    { 49, 109 };
+    { 49, 108 };
     ST7735Adapter::St7735Adapter::Coordinate end
-    { 60, 109 };
+    { 60, 108 };
+    st7735Adapter.drawLine(start, end);
+
+    sceneColors.insert(std::make_pair(start.y, SceneColor
+    { start.x, end.x,
+    { 0x7b, 0x3f, 0x00 } }));
+  }
+  {
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { 48, 109 };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { 61, 109 };
     st7735Adapter.drawLine(start, end);
 
     sceneColors.insert(std::make_pair(start.y, SceneColor
@@ -77,9 +88,9 @@ void St7735ChristmasTree::drawScene()
 
   {
     ST7735Adapter::St7735Adapter::Coordinate start
-    { 48, 110 };
+    { 47, 110 };
     ST7735Adapter::St7735Adapter::Coordinate end
-    { 61, 110 };
+    { 62, 110 };
     st7735Adapter.drawLine(start, end);
 
     sceneColors.insert(std::make_pair(start.y, SceneColor
@@ -139,6 +150,127 @@ void St7735ChristmasTree::drawScene()
     { 0, y };
     ST7735Adapter::St7735Adapter::Coordinate end
     { 127, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  // draw candles
+  st7735Adapter.drawPixel(40, 28, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(41, 28, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(40, 27, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(40, 26, 0xff, 0xd7, 0x00);
+  startx = 39;
+  stopx = 41;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 29; y <= 34; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  st7735Adapter.drawPixel(35, 48, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(34, 48, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(35, 47, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(35, 46, 0xff, 0xd7, 0x00);
+  startx = 34;
+  stopx = 36;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 49; y <= 54; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  st7735Adapter.drawPixel(30, 68, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(31, 68, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(30, 67, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(30, 66, 0xff, 0xd7, 0x00);
+  startx = 29;
+  stopx = 31;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 69; y <= 74; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  st7735Adapter.drawPixel(70, 28, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(69, 28, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(70, 27, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(70, 26, 0xff, 0xd7, 0x00);
+  startx = 69;
+  stopx = 71;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 29; y <= 34; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  st7735Adapter.drawPixel(75, 48, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(74, 48, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(75, 47, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(75, 46, 0xff, 0xd7, 0x00);
+  startx = 74;
+  stopx = 76;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 49; y <= 54; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
+    st7735Adapter.drawLine(start, end);
+  }
+
+  st7735Adapter.drawPixel(80, 68, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(79, 68, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(80, 67, 0xff, 0xd7, 0x00);
+  st7735Adapter.drawPixel(80, 66, 0xff, 0xd7, 0x00);
+  startx = 79;
+  stopx = 81;
+  st7735Adapter.setDrawingColor(0xed, 0x1c, 0x24); // candle red
+  for (uint16_t y = 69; y <= 74; y++)
+  {
+    sceneColors.insert(std::make_pair(y, SceneColor
+    { startx, stopx,
+    { 0xed, 0x1c, 0x24 } }));
+
+    ST7735Adapter::St7735Adapter::Coordinate start
+    { startx, y };
+    ST7735Adapter::St7735Adapter::Coordinate end
+    { stopx, y };
     st7735Adapter.drawLine(start, end);
   }
 }
